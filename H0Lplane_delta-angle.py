@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd#pip install pandas
 #Reciprocal lattice in (H,0,L) plane for Gd2PdSi3
 lmbda=1.5
 a_rcp=1.78042#a*
@@ -36,3 +37,7 @@ print("measure_omega=",np.max(omega)+5," - ",np.min(omega)-5," = ",np.max(omega)
 print("tau =", tau)
 print("2theta =", theta*2)
 print("alpha =",alpha1, alpha2)
+1=pd.DataFrame([omega,theta*2,tau],index=["omega","2theta","tau"], columns=['(1,0,0)','(1+q,0,0)','(1-q,0,0)','(1,q,0)','(1,-q,0)','(1+q,-q,0)','(1-q,q,0)'])
+d2=pd.DataFrame([[Delta_omega],[Delta_omega+10],[np.max(omega)+5],[np.min(omega)-5]],index=["Delta_omega","measure_omega(+-5)","measure_max","measure_min"])
+print(d1)
+print(d2)
